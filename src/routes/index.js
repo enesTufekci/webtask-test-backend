@@ -8,6 +8,10 @@ router.get('/', (req, res) => {
   res.send({ status: 'ok' });
 });
 
+router.get('/smart-home', (req, res) => {
+  res.send(Hub.devices);
+});
+
 router.get('/smart-home/:device', (req, res) => {
   const { device } = req.params;
   const result = Hub.switch(device);
